@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul id="recipes">
+      <li v-for="recipe in recipes" v-bind:key="recipe.id">{{ recipe.title }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      users: [],
+    }
+  },
+  created() {
+    fetch("/api/recipes")
+        .then((res) => res.json())
+        .then((json) => {
+          this.recipes = json.recipes
+        })
   }
 }
 </script>
