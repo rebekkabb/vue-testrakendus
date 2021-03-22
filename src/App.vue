@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <ul id="recipes">
-      <li v-for="recipe in recipes" v-bind:key="recipe.id">{{ recipe.title }}</li>
-    </ul>
+    <div class="flex flex-row">
+      <div>
+        <ul id="recipes">
+          <li v-for="recipe in recipes" v-bind:key="recipe.id" :currentRecipe="recipe">{{ recipe.title }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,7 +16,8 @@ export default {
   name: 'App',
   data() {
     return {
-      users: [],
+      recipes: [],
+      currentRecipe: {}
     }
   },
   created() {
