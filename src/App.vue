@@ -2,8 +2,10 @@
   <div id="app">
     <div class="container">
       <div class="recipe-list">
-        <h1> Retseptid </h1>
-        <button @click="swapComponent('add', '')"> Lisa retsept</button>
+        <div class="header">
+          <h1> Retseptid </h1>
+          <button @click="swapComponent('add', '')"> Lisa retsept</button>
+        </div>
         <div id="recipes" v-for="recipe in recipes" v-bind:key="recipe.id">
           <RecipeItem :recipe="recipe"
                       v-on:swapComponent="swapComponent('display', recipe)"
@@ -95,12 +97,18 @@ body {
   border: 1px solid gray;
 }
 
-.recipe-list{
-  width: 20vw;
-  text-align: center;
+.header {
+  margin-bottom: 30px;
 }
 
-.component-container{
+
+.recipe-list {
+  width: 20vw;
+  text-align: center;
+  background-color: #F1F5F2;
+}
+
+.component-container {
   text-align: center;
   width: 35vw;
 }
