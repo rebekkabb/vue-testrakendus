@@ -11,7 +11,7 @@
                       v-on:edit="swapComponent('edit', recipe)"></RecipeItem>
         </div>
       </div>
-      <component :is="currentComponent" v-bind="{ recipe: this.currentRecipe}"
+      <component class="component-container" :is="currentComponent" v-bind="{ recipe: this.currentRecipe}"
                  v-on:swap="swapComponent('intro', '')"></component>
     </div>
   </div>
@@ -89,7 +89,19 @@ body {
 }
 
 .container {
+  height: 50vh;
   display: flex;
   flex-direction: row;
+  border: 1px solid gray;
+}
+
+.recipe-list{
+  width: 20vw;
+  text-align: center;
+}
+
+.component-container{
+  text-align: center;
+  width: 35vw;
 }
 </style>
