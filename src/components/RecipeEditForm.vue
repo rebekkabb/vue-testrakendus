@@ -1,19 +1,25 @@
 <template>
-<div>
-  <p> Form </p>
-  <input type="text" v-model="title" :placeholder="this.recipe.title">
-  <input type="text" v-model="type" :placeholder="this.recipe.type">
-  <input type="number" v-model="time" :placeholder="this.recipe.time">
-  <input type="text" v-model="ingredients" :placeholder="this.recipe.ingredients">
-  <button @click="editRecipe(); $emit('swap')" > Muuda retsepti </button>
-</div>
+  <div class="edit-form">
+    <label for="title" class="field"> Retsepti pealkiri:</label>
+    <input type="text" v-model="title" id='title' :placeholder="this.recipe.title">
+
+    <label for="type" class="field"> Käik:</label>
+    <input type="text" v-model="type" id="type" :placeholder="this.recipe.type">
+
+    <label for="time" class="field"> Valmistusaeg:</label>
+    <input type="number" v-model="time" id="time" :placeholder="this.recipe.time">
+
+    <label for="ingredients" class="field"> Koostisosad:</label>
+    <textarea v-model="ingredients" id="ingredients" :placeholder="this.recipe.ingredients"></textarea>
+    <button @click="editRecipe(); $emit('swap')"> Muuda retsepti</button>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 
 export default {
-name: 'RecipeEditForm',
+  name: 'RecipeEditForm',
   props: ['recipe'],
   data() {
     return {
@@ -38,6 +44,35 @@ name: 'RecipeEditForm',
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & input {
+    margin-bottom: 30px;
+    width: 10vw;
+    display: block;
+  }
+
+  & label {
+    font-size: 20px;
+    width: 10vw;
+    float: left;
+    display: block;
+  }
+  & #time {
+    width: 5vw;
+  }
+
+  & textarea {
+    height: 10vh;
+    width: 20vw;
+    margin-bottom: 30px;
+  }
+}
 
 </style>

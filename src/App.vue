@@ -91,7 +91,7 @@ body {
 }
 
 .container {
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: row;
   border: 1px solid gray;

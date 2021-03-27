@@ -65,7 +65,8 @@ export default {
   }
 
   & textarea {
-    width: 10vw;
+    height: 10vh;
+    width: 20vw;
     margin-bottom: 30px;
   }
 }
