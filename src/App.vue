@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 body {
   margin: 0;
@@ -94,7 +94,8 @@ body {
   height: 60vh;
   display: flex;
   flex-direction: row;
-  border: 1px solid gray;
+  border: 1px solid darkgray;
+  max-width: 65vw;
 }
 
 .header {
@@ -103,6 +104,7 @@ body {
 
 
 .recipe-list {
+  padding: 30px 5px;
   width: 20vw;
   text-align: center;
   background-color: #F1F5F2;
@@ -111,6 +113,6 @@ body {
 
 .component-container {
   text-align: center;
-  width: 30vw;
+  width: 40vw;
 }
 </style>

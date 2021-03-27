@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 .edit-form {
   display: flex;
@@ -54,13 +54,13 @@ export default {
 
   & input {
     margin-bottom: 30px;
-    width: 10vw;
+    width: 15vw;
     display: block;
   }
 
   & label {
     font-size: 20px;
-    width: 10vw;
+    width: 15vw;
     float: left;
     display: block;
   }
