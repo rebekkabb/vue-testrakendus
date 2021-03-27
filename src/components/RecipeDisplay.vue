@@ -13,11 +13,7 @@
       </div>
     </div>
     <div class="lower-section">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in hendrerit purus, nec dapibus nulla. Ut volutpat
-      justo porttitor venenatis ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-      curae; Sed nec lacus id ipsum tempus sodales non ac lacus. Nulla facilisi. In ac commodo nulla, vitae sodales
-      lorem. Suspendisse potenti. Aliquam varius dignissim neque sed malesuada. Proin accumsan metus eget ante blandit
-      hendrerit. Praesent in tortor a lorem dictum efficitur sit amet non eros.
+      <p> {{ this.recipe.steps }}</p>
     </div>
   </div>
 </template>
@@ -25,6 +21,7 @@
 <script>
 import RecipeType from "./RecipeType";
 import RecipeTime from "./RecipeTime";
+
 export default {
   name: 'RecipeDisplay',
   components: {RecipeTime, RecipeType},

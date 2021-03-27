@@ -9,8 +9,16 @@
     <label for="time" class="field"> Valmistusaeg:</label>
     <input type="number" v-model="time" id="time" :placeholder="this.recipe.time">
 
-    <label for="ingredients" class="field"> Koostisosad:</label>
-    <textarea v-model="ingredients" id="ingredients" :placeholder="this.recipe.ingredients"></textarea>
+    <div class="textareas">
+      <div>
+        <label for="ingredients" class="field"> Koostisosad</label>
+        <textarea v-model="ingredients" id="ingredients" placeholder="Koostisosad"></textarea>
+      </div>
+      <div>
+        <label for="juhised" class="field"> Juhised</label>
+        <textarea v-model="steps" id="juhised" placeholder="Juhised"></textarea>
+      </div>
+    </div>
     <button @click="editRecipe(); $emit('swap')"> Muuda retsepti</button>
   </div>
 </template>
@@ -26,7 +34,8 @@ export default {
       title: this.recipe.title,
       type: this.recipe.type,
       time: this.recipe.time,
-      ingredients: this.recipe.ingredients
+      ingredients: this.recipe.ingredients,
+      steps: this.recipe.steps
     }
   },
   methods: {
@@ -35,7 +44,8 @@ export default {
         title: this.title,
         type: this.type,
         time: this.time,
-        ingredients: this.ingredients
+        ingredients: this.ingredients,
+        steps: this.steps
       }).then(function (response) {
         console.log(response)
       })
@@ -62,17 +72,24 @@ export default {
     font-size: 20px;
     width: 15vw;
     float: left;
-    display: block;
   }
+
   & #time {
     width: 5vw;
   }
 
   & textarea {
     height: 10vh;
-    width: 20vw;
+    width: 15vw;
     margin-bottom: 30px;
   }
+}
+
+.textareas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
 }
 
 </style>

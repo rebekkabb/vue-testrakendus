@@ -9,8 +9,8 @@ export function makeServer({environment = "development"} = {}) {
         },
 
         seeds(server) {
-            server.create("recipe", {title: "Eggs", type: "Breakfast", time: 15, ingredients: "text"})
-            server.create("recipe", {title: "Salad", type: "Lunch/Dinner", time: 30, ingredients: "text"})
+            server.create("recipe", {title: "Eggs", type: "Breakfast", time: 15, ingredients: "text", steps: "text"})
+            server.create("recipe", {title: "Salad", type: "Lunch/Dinner", time: 30, ingredients: "text", steps: "test"})
         },
 
         routes() {
