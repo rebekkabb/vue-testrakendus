@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <p> Form </p>
-    <input type="text" v-model="title" placeholder="title">
-    <input type="text" v-model="type" placeholder="type">
-    <input type="number" v-model="time" placeholder="time">
-    <input type="text" v-model="ingredients" placeholder="ingredients">
-    <button @click="addRecipe(); $emit('swap')" > Lisa retsept </button>
+  <div class="add-form">
+    <label for="title" class="field"> Retsepti pealkiri:</label>
+    <input type="text" v-model="title" id='title' placeholder="Retsepti pealkiri">
+    <label for="type" class="field"> Käik:</label>
+    <input type="text" v-model="type" id="type" placeholder="Käik">
+    <label for="time" class="field"> Valmistusaeg:</label>
+    <input type="number" v-model="time" id="time" placeholder="Valmistusaeg">
+    <label for="ingredients" class="field"> Koostisosad:</label>
+    <textarea v-model="ingredients" id="ingredients" placeholder="Koostisosad"></textarea>
+    <button @click="addRecipe(); $emit('swap')"> Lisa retsept</button>
   </div>
 </template>
 
@@ -37,6 +40,35 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & input {
+    margin-bottom: 30px;
+    width: 10vw;
+    display: block;
+  }
+
+  & label {
+    font-size: 20px;
+    width: 10vw;
+    float: left;
+    display: block;
+  }
+  & #time {
+    width: 5vw;
+  }
+
+  & textarea {
+    width: 10vw;
+    margin-bottom: 30px;
+  }
+}
+
 
 </style>

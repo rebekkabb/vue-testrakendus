@@ -106,10 +106,11 @@ body {
   width: 20vw;
   text-align: center;
   background-color: #F1F5F2;
+  overflow-y:auto
 }
 
 .component-container {
   text-align: center;
-  width: 35vw;
+  width: 30vw;
 }
 </style>
