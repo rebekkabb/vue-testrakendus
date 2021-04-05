@@ -2,14 +2,14 @@
   <div class="recipe-list-container">
     <div class="header">
       <h1> Retseptid </h1>
-      <router-link to="/add" class="submit-button button-block"> Lisa retsept </router-link>
+      <router-link to="/add" class="submit-button button-block"> Lisa retsept</router-link>
       <hr/>
     </div>
-    <div class="recipe" v-for="recipe in recipes" :key="recipe.id">
-      <Recipe :recipe="recipe"
-                  v-on:swapComponent="swapComponent('display', recipe)"
-                  v-on:delete="deleteRecipe(recipe)"
-                  v-on:edit="swapComponent('edit', recipe)"></Recipe>
+    <div class="recipes">
+      <div v-for="recipe in recipes" :key="recipe.id">
+        <Recipe :recipe="recipe"
+                v-on:delete="deleteRecipe(recipe)"></Recipe>
+      </div>
     </div>
   </div>
 </template>
@@ -25,8 +25,7 @@ export default {
   },
   data() {
     return {
-      recipes: [],
-      currentRecipe: null,
+      recipes: []
     }
   },
   methods: {
@@ -36,17 +35,11 @@ export default {
             this.recipes = response.data.recipes
           }.bind(this));
     },
-    swapComponent: function (component, recipe) {
-      this.currentRecipe = recipe
-      this.listRecipes()
-    },
     deleteRecipe: function (recipe) {
-      fetch("/api/recipes/" + recipe.id, {method: 'delete', body: JSON.stringify(recipe)})
-          .then(res => res.json())
-          .then(data => {
-            alert(data.message)
-          })
-      this.swapComponent('intro', '')
+      axios.delete('/api/recipes/' + recipe.id).then(() => {
+        this.listRecipes()
+        alert('Retsept on kustutatud!')
+      })
     },
   },
   created() {
@@ -59,8 +52,7 @@ export default {
 
 .recipe-list-container {
   text-align: center;
-  overflow-y: auto;
-  min-width: 35vw;
+  min-width: 38vw;
 
   & a {
     text-decoration: none;
@@ -79,12 +71,15 @@ export default {
 
   & hr {
     margin-top: 30px;
+    color: lightgray;
   }
 
 }
 
-.recipe {
+.recipes {
   padding: 0 50px;
+  max-height: 30vh;
+  overflow-y: auto;
 }
 
 .submit-button {

@@ -8,14 +8,14 @@
       <div class='with-svg'>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
              stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="image">
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/>
           <polyline points="12 6 12 12 16 14"/>
         </svg>
         <p>{{ this.recipe.time }}</p>
       </div>
       <div class='with-svg'>
-        <svg class="image" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
              fill="none"
              stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -39,7 +39,7 @@ import axios from "axios";
 
 export default {
   name: 'RecipeDisplay',
-  data(){
+  data() {
     return {
       recipe: {}
     }
@@ -60,15 +60,15 @@ export default {
 .display-container {
   overflow-y: auto;
   max-width: 35vw;
-  min-width: 35vw;
-  max-height: 70vh;
+  min-width: 38vw;
+  min-height: 60vh;
+  max-height: 60vh;
   display: flex;
   flex-direction: column;
   padding: 60px 50px;
 
-  & a {
-    text-decoration: none;
-    color: #2c3e50;
+  & hr {
+    margin: 30px 0;
   }
 }
 
@@ -95,10 +95,6 @@ export default {
 
 .small-margin {
   margin-bottom: 60px;
-}
-
-.display-container hr {
-  margin: 30px 0;
 }
 
 .display-whitespace {

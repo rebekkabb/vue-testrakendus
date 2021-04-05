@@ -9,7 +9,7 @@
 <script>
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 * {
   box-sizing: border-box;
@@ -36,6 +36,11 @@
   flex-direction: row;
   border: 1px solid darkgray;
   border-radius: 5px;
+
+  & a {
+    text-decoration: none;
+    color: #2c3e50;
+  }
 }
 
 </style>

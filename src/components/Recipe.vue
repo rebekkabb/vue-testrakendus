@@ -2,7 +2,7 @@
   <div class="item">
     <div class='recipe-title'>
       <router-link :to="{name: 'RecipeDisplay', params: {id: recipe.id}}">
-        <h3>{{ recipe.title }}</h3>
+        <p>{{ recipe.title }}</p>
       </router-link>
     </div>
     <div class="buttons">

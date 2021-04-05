@@ -3,29 +3,24 @@
     <router-link to="/" class="return-link"> Tagasi </router-link>
     <h1> Lisa retsept </h1>
     <div class='form-element'>
-      <label> Retsepti pealkiri
-      <input type='text' v-model="title" placeholder='Lisa pealkiri'/>
-      </label>
+      <label for="title"> Retsepti pealkiri</label>
+      <input id="title" type='text' v-model="title" placeholder='Lisa pealkiri'/>
     </div>
     <div class='form-element'>
-      <label>Käik
-      <input type='text' v-model="type" placeholder='Lisa käik'/>
-      </label>
+      <label for="type">Käik</label>
+      <input id="type" type='text' v-model="type" placeholder='Lisa käik'/>
     </div>
     <div class='form-element'>
-      <label>Valmistusaeg
-      <input type='number' v-model="time" placeholder='Lisa valmistusaeg'/>
-      </label>
+      <label for="time">Valmistusaeg</label>
+      <input id="time" type='number' v-model="time" placeholder='Lisa valmistusaeg'/>
     </div>
     <div class='form-element'>
-      <label> Koostisosad
+      <label for="ingredients"> Koostisosad</label>
       <textarea id='ingredients' v-model="ingredients" placeholder='Lisa koostisosad'/>
-      </label>
     </div>
     <div class='form-element'>
-      <label> Juhised
-      <textarea id='juhised' v-model="steps" placeholder='Lisa juhised'/>
-      </label>
+      <label for="steps"> Juhised </label>
+      <textarea id='steps' v-model="steps" placeholder='Lisa juhised'/>
     </div>
     <input class='submit-button button-block' type='submit' value='Salvesta retsept'/>
   </form>
@@ -67,11 +62,6 @@ export default {
 .form-container {
   min-width: 35vw;
   margin: 25px 20px;
-
-  & a {
-    text-decoration: none;
-    color: #2c3e50;
-  }
 
   & h1 {
     text-align: center;

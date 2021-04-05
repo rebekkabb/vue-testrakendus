@@ -3,29 +3,24 @@
     <router-link to="/" class="return-link"> Tagasi</router-link>
     <h1> Muuda retsepti </h1>
     <div class='form-element'>
-      <label> Retsepti pealkiri
-        <input type='text' v-model="recipe.title"/>
-      </label>
+      <label for="title"> Retsepti pealkiri</label>
+        <input id="title" type='text' v-model="recipe.title"/>
     </div>
     <div class='form-element'>
-      <label>Käik
-        <input type='text' v-model="recipe.type"/>
-      </label>
+      <label for="type">Käik</label>
+        <input id="type" type='text' v-model="recipe.type"/>
     </div>
     <div class='form-element'>
-      <label>Valmistusaeg
-        <input type='number' v-model="recipe.time"/>
-      </label>
+      <label for="time">Valmistusaeg</label>
+        <input id="time" type='number' v-model="recipe.time"/>
     </div>
     <div class='form-element'>
-      <label> Koostisosad
+      <label for="ingredients"> Koostisosad</label>
         <textarea id='ingredients' v-model="recipe.ingredients"/>
-      </label>
     </div>
     <div class='form-element'>
-      <label> Juhised
-        <textarea id='juhised' v-model="recipe.steps"/>
-      </label>
+      <label for="steps"> Juhised </label>
+        <textarea id='steps' v-model="recipe.steps"/>
     </div>
     <input class='submit-button button-block' type='submit' value='Salvesta retsept'/>
   </form>
@@ -71,11 +66,6 @@ export default {
   min-width: 35vw;
   margin: 25px 20px;
 
-  & a {
-    text-decoration: none;
-    color: #2c3e50;
-  }
-
   & h1 {
     text-align: center;
     margin-top: 25px;
@@ -83,7 +73,7 @@ export default {
 }
 
 .form-element {
-  margin: 25px 20px;
+  margin: 25px 0;
   background-color: #CFDDD3;
   border-radius: 3px;
 
